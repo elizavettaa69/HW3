@@ -4,17 +4,18 @@ import os
 import sys
 
 NUM_ROWS = 50
-
-
-COLUMNS = ["COLUMN_1", "COLUMN_2", "COLUMN_3", "COLUMN_4"]
+COLUMNS = ["student", "sleep_hours","platform" "memes_watched"]
 
 def generate_row():
-
+    names = ["Лизочка", "Юрий", "Лариса", "Альберт", "Ангелина", "Георгий", "Тамерлан", "Адам", "Анастасия"]
+     anxieties = ["спокойный", "небольшой страх", "страшно", "паника"]
+    platforms = ["TikTok", "Instagram reels", "YouTube Shorts"]
     return {
-        "COLUMN_1": random.randint(0, 100),
-        "COLUMN_2": round(random.uniform(1.5, 9.9), 2),
-        "COLUMN_3": random.randint(0, 100),
-        "COLUMN_4": random.choice(["A", "B", "C"]),
+         "student": random.choice(names),
+         "sleep_hours": random.randint(1, 12),
+         "memes_watched": random.randint(0, 1000),
+         "platform": random.choice(platforms)
+         
     }
 
 OUTPUT_DIR = sys.argv[1] if len(sys.argv) > 1 else "/data"
@@ -28,4 +29,3 @@ with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=COLUMNS)
     writer.writeheader()
     writer.writerows(rows)
-
