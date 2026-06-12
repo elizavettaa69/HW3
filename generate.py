@@ -4,14 +4,13 @@ import os
 import sys
 
 NUM_ROWS = 50
-COLUMNS = ["student", "sleep_hours","platform" "memes_watched"]
+COLUMNS = ["person", "sleep_hours","platform", "memes_watched"]
 
 def generate_row():
     names = ["Лизочка", "Юрий", "Лариса", "Альберт", "Ангелина", "Георгий", "Тамерлан", "Адам", "Анастасия"]
-    anxieties = ["спокойный", "небольшой страх", "страшно", "паника"]
     platforms = ["TikTok", "Instagram reels", "YouTube Shorts"]
     return {
-         "student": random.choice(names),
+         "person": random.choice(names),
          "sleep_hours": random.randint(1, 12),
          "memes_watched": random.randint(0, 1000),
          "platform": random.choice(platforms)
